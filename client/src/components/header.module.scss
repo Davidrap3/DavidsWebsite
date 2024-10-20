@@ -1,0 +1,89 @@
+.HeaderContainer {
+    display: flex;
+    width: 100%;
+    height: 70px;
+    position: sticky;
+    top: 0;
+    background-color: var(--color-main-background);
+    align-items: center;
+    font-family: 'Montserrat', sans-serif;
+    z-index: 999;
+    margin: 0 auto;
+}
+
+.HeaderContainerInner {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    background-color: var(--color-main-inner);
+    align-items: center; /* This centers the content vertically */
+    justify-content: space-between; /* This spaces elements between left and right */
+}
+
+.HeaderLeft {
+    display: flex;
+    flex: 3;
+    height: 100%;
+    align-items: center;
+}
+
+
+.HeaderCenter {
+    display: flex;
+    flex: 3;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+
+    .HeaderTitle {
+        font-family: "Mate", serif;
+        font-size: 26px;
+        color: aliceblue;
+    }
+
+}
+
+.HeaderRight {
+    display: flex;
+    flex: 3;
+    height: 100%;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+
+.HeaderLogo {
+    margin-left: 10px;
+    background-color: transparent;
+    height: 50px; /* Adjust the size of the logo */
+    width: auto; /* Maintain aspect ratio */
+}
+
+
+
+.HeaderLinksContainer {
+    display: flex;
+    margin-right: 20px;
+}
+
+.HeaderLinksInner {
+    display: flex;
+    list-style-type: none;
+    text-align: center; 
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+}
+
+.HeaderLinks {
+    display: inline-block;
+    margin-right: 15px;
+    justify-content: center;
+    align-items: center;
+    color: aliceblue;
+}
+
+.LinkDecoration {
+    text-decoration: none;
+    color: aliceblue;
+}
