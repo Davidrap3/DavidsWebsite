@@ -77,45 +77,82 @@
 
     }
 
-    .CarouselItem {
+    @keyframes slideInFromRight {
+        0% {
+          opacity: 0;
+          transform: translateX(100px); /* Slide up effect */
+        }
+        100% {
+          opacity: 1;
+          transform: translateX(0);
+        }
+    }
+    
+    @keyframes slideInFromLeft {
+        0% {
+            opacity: 0;
+            transform: translateX(-100px); /* Start from the left */
+        }
+        100% {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    .SlideInRight {
+        animation: slideInFromRight 0.5s ease-in-out;;
+    }
+
+    .SlideInLeft {
+        animation: slideInFromLeft 0.5s ease-in-out;
+    }
+     
+    .CarouselImagesContainer {
         display: flex;
         box-sizing: border-box;
+        overflow: hidden;
         height: 100%;
         width: 50%;
-
-        .ArtImage {
-            margin-left: auto;
-            margin-right: auto;
-            width: 100%;
+        
+        .CarouselItem {
+            display: flex;
+            box-sizing: border-box;
             height: 100%;
-            object-fit: cover;
-            /*border-radius: 15px;*/
-        }
+            width: 100%;
+            opacity: 1;
+            transition: transform 0.5s ease;
 
-        .ArtDetails {
-            position: absolute;
-            background-color: rgba(0, 0, 0, 0.411);
-            padding: 5px;
-            bottom: 0px;
-            right: 0px;
-            width: 200px;
-            color: var(--color-bone-text);
-
-            .ArtName {
-               
-            }
-    
-            .Description {
-                //position: absolute;
-                top: 40px;
+            .ArtImage {
+                margin-left: auto;
+                margin-right: auto;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                /*border-radius: 15px;*/
             }
 
-            .DetailSectionText {
-                display: flex;
+            .ArtDetails {
+                position: absolute;
+                background-color: rgba(0, 0, 0, 0.411);
+                padding: 5px;
+                bottom: 0px;
+                right: 0px;
+                width: 200px;
+                color: var(--color-bone-text);
+
+                .ArtName {
+                
+                }
+        
+                .Description {
+                    //position: absolute;
+                    top: 40px;
+                }
+
+                .DetailSectionText {
+                    display: flex;
+                }
             }
-
-
-
         }
     }
 
@@ -154,7 +191,7 @@
     }
 
     .SlideHidden {
-        display: none;
+        display: none;  /* Completely hide the slide */
     }
 }
 

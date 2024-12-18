@@ -3,7 +3,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    height: 100%;
     width: 100%;
     background-color: var(--color-main-back);
 
@@ -16,12 +16,98 @@
         height: 600px;
         width: 100%;
         max-width: 1440px;
+
     }
 
     .AboutSection {
         display: flex;
-        height: 100%;
+        padding: 20px 20px 20px 20px; //top right bottom left
+        height: 800px;
+        //height: 100%;
+        background-color: var(--color-main-back);
         width: 100%;
         max-width: 1440px;
+
+        .AboutSectionText {
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            width: 70%;
+
+            .CanvasTitle {
+                font-size: 120px;
+                margin-bottom: 20px;
+                text-transform: uppercase;
+                font-family: "Dream Avenue", serif;
+                color: #E2DAC9;
+            }
+
+            .CanvasTextOuter {
+                display: flex;
+                flex-direction: column;
+                width: 40%;
+
+
+                .CanvasSpecialty {
+                    font-family: "Verdana", sans-serif;
+                    font-size: 30px;
+                    margin-bottom: 20px;
+                    hyphens: manual;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    color: aliceblue;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 5; /* Adjust to the number of lines you want */
+                    -webkit-box-orient: vertical;
+                    color: #E2DAC9;
+                }
+
+                .CanvasDescription {
+                    font-family: "Verdana", sans-serif;
+                    font-size: 16px;
+                    hyphens: manual;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    color: aliceblue;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 10; /* Adjust to the number of lines you want */
+                    -webkit-box-orient: vertical;
+                    color: #E2DAC9;
+                }
+            }
+        }
+
+        .AboutImageContainer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            width: 500px;
+
+            .AboutImageBorder {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                overflow: hidden;
+                border-radius: 300px 300px 0 0;
+                height: 100%;
+                width: 500px;
+                background-color: rgb(255, 255, 255);
+
+                .AboutImageSize {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+
+        }
+    }
+
+    .ContactFormEmail {
+        display: flex;
+        height: 600px;
+        width: 100%;
+        background-color: aliceblue;
     }
 }

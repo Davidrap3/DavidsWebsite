@@ -1,7 +1,11 @@
 [
     {
-        "title": "My Canvas",
-        "specialty": "I specialize in Wire art ​using Clay and ​recycled materials​ and abstract​ concepts.",
-        "description": "While I've been trained in different ​mediums, I found a deep connection ​to sculpting. I love how it ​communicates so much of the creator ​to the audience. Ironically, the ​communication feels easier in the ​abstract. I enjoy using recycled ​materials in my art pieces, giving ​objects a new beautiful purpose for ​existence and adding life into my ​art."
+    "specialDescription": [
+            {
+                "title": "My Canvas",
+                "specialty": "I specialize in Wire art using Clay and recycled materials and abstract concepts.",
+                "description": "While I've been trained in different mediums, I found a deep connection to sculpting. I love how it communicates so much of the creator to the audience. Ironically, the communication feels easier in the abstract. I enjoy using recycled materials in my art pieces, giving objects a new beautiful purpose for existence and adding life into my art."
+            }
+        ]
     }
 ]

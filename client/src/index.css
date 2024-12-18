@@ -85,4 +85,8 @@ code {
   --color-main-outline: rgb(105, 117, 101);
   /* ECDFCC */
   --color-main-text: rgb(236, 223, 204);
+ /* D3ECCC */
+  --color-highlights: rgb(211, 236, 204); 
+ /* #dfdbdb */
+  --color-placeholder: rgb(223, 219, 219);
 }

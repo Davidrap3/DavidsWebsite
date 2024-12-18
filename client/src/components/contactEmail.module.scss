@@ -1,0 +1,209 @@
+.emailFormOuter {
+    display: flex;
+    flex-direction: column;
+    max-width: 1440px;
+    margin: 10px 0 10px 0;
+    padding: 0 20px 0 20px;
+    width: 100%;
+    font-family: "Verdana", sans-serif;
+
+    .ContactTitle {
+        display: flex;
+        font-size: 30px;
+        color: var(--color-main-text);
+    }
+
+
+    .emailFormInner {
+        display: flex;
+        flex-direction: column;
+        box-sizing: border-box;
+        width: 100%;
+        background-color: rgba(240, 248, 255, 0.26);
+        border-radius: 15px;
+        //box-shadow: 10px 10px 20px 0 rgba(197, 61, 61, 0.16);
+        padding: 1em;
+        margin-top: 1em;
+
+
+        .messageEmail {
+            display: flex;
+            position: relative;
+            flex-direction: column;
+            margin: 0 0 10px 0;
+
+            .unFocussedLabel {
+                color: var(--color-placeholder); /* Default color */
+                font-size: 16px;
+                transition: color 0.3s ease;
+            }
+
+            .focusedLabel {
+                font-size: 16px;
+                color: var(--color-highlights);
+                transition: color 0.3s ease;
+            }
+
+            .messageEmailTextBox {
+                border: none;
+                padding-top: 20px;
+                min-height: 20px;
+                line-height: 1;
+                font-size: 1em;
+                color: var(--color-placeholder); 
+                outline: none;
+                background-color: transparent;
+                transition: border-bottom 0.3s ease, color 0.3s ease;
+                border-bottom: 2px solid rgb(71, 71, 71);
+                resize: none;
+                overflow: hidden; 
+            }
+
+            .messageEmailTextBox::placeholder {
+                color: var(--color-placeholder); 
+            }
+
+            .messageEmailTextBox:focus {
+                color: var(--color-highlights);
+                border-bottom: 2px solid var(--color-highlights);
+            }
+            
+            .messageEmailTextBox:focus::placeholder {
+                color: transparent;
+            }
+            
+        }
+
+
+        .subjectEmail {
+            display: flex;
+            position: relative;
+            flex-direction: column;
+            margin-bottom: 1rem;
+
+            .unFocussedLabel {
+                color: var(--color-placeholder); /* Default color */
+                font-size: 16px;
+                transition: color 0.3s ease;
+            }
+
+            .focusedLabel {
+                font-size: 16px;
+                color: var(--color-highlights);
+                transition: color 0.3s ease;
+            }
+
+            .subjectEmailInput {
+                border: none;
+                height: 40px;
+                line-height: 1.5;
+                font-size: 0.9em;
+                color: var(--color-placeholder); 
+                outline: none;
+                background-color: transparent;
+                transition: border-bottom 0.3s ease, color 0.3s ease;
+                border-bottom: 2px solid rgb(71, 71, 71);
+            }
+
+            .subjectEmailInput::placeholder {
+                color: var(--color-placeholder); 
+            }
+
+            .subjectEmailInput:focus {
+                color: var(--color-highlights);
+                border-bottom: 2px solid var(--color-highlights);
+            }
+            
+            .subjectEmailInput:focus::placeholder {
+                color: transparent;
+            }
+
+
+        }
+
+        .emailRow {
+            display: flex;
+            position: relative;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+            width: 100%;
+
+            .unFocussedLabel {
+                color: var(--color-placeholder); /* Default color */
+                font-size: 16px;
+                transition: color 0.3s ease;
+            }
+
+            .focusedLabel {
+                font-size: 16px;
+                color: var(--color-highlights);
+                transition: color 0.3s ease;
+            }
+
+            .nameEmail {
+                display: flex;
+                flex-direction: column;
+                position: relative;
+                margin-right: 20px;
+                width: 45%;
+
+                .nameEmailInput {
+                    border: none;
+                    height: 40px;
+                    line-height: 1.5;
+                    font-size: 0.9em;
+                    color: var(--color-placeholder); 
+                    outline: none;
+                    background-color: transparent;
+                    transition: border-bottom 0.3s ease, color 0.3s ease;
+                    border-bottom: 2px solid rgb(71, 71, 71);
+                }
+
+                .nameEmailInput::placeholder {
+                    color: var(--color-placeholder); 
+                }
+
+                .nameEmailInput:focus {
+                    color: var(--color-highlights);
+                    border-bottom: 2px solid var(--color-highlights);
+                }
+                
+                .nameEmailInput:focus::placeholder {
+                    color: transparent;
+                }
+            }
+
+            .emailEmail {
+                display: flex;
+                flex-direction: column;
+                width: 45%;
+
+                .emailEmailInput {
+                    border: none;
+                    height: 40px;
+                    line-height: 1.5;
+                    font-size: 0.9em;
+                    color: var(--color-placeholder); 
+                    background-color: transparent;
+                    transition: border-bottom 0.3s ease, color 0.3s ease;
+                    border-bottom: 2px solid rgb(71, 71, 71);
+                }
+
+                .emailEmailInput::placeholder {
+                    color: var(--color-placeholder); 
+                }
+
+                .emailEmailInput:focus {
+                    outline: none;
+                    color: var(--color-highlights);
+                    border-bottom: 2px solid var(--color-highlights);
+                }
+                
+                .emailEmailInput:focus::placeholder {
+                    color: transparent;
+                }
+            }
+        }
+    }
+}
+
