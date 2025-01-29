@@ -1,7 +1,10 @@
 from flask import Blueprint, request, jsonify
 from .emailsending import EmailSender
 import os
+from Utility.logger import create_logger
 
+
+logger = create_logger()
 # Email BluePrint
 email_bp = Blueprint('email', __name__)
 
@@ -9,8 +12,9 @@ email_sender = EmailSender(
     smtp_server="smtp.gmail.com",
     smtp_port=587,
     sender_email=os.environ.get('SENDER_EMAIL'),
-    sender_password=os.environ.get('SENDER_PASSWORD')
+    sender_password=os.environ.get('APP_PASSWORD')
 )
+
 
 @email_bp.route('/send-email', methods=['POST'])
 def send_email():
@@ -33,10 +37,17 @@ def send_email():
         message=message,
         name=name
     )
+    
+    logger.info("Testing user message {}".format(confirmation_response))
+    logger.info("Testing user message {}".format(user_message_response))
+    
 
     # If both emails were successful, return a success response
     if confirmation_response['status'] == 'Success' and user_message_response['status'] == 'Success':
-        return jsonify({"status": "success", "message": "Emails sent successfully!"}), 200
+        return jsonify({
+            "status": "success", 
+            "message": "Emails sent successfully!"
+            }), 200
     else:
         return jsonify({
             "status": "error",

@@ -3,12 +3,16 @@ from dotenv import load_dotenv
 import os
 from flask_cors import CORS
 import json
-from .Utility.email_routes import email_bp
+from Email.email_routes import email_bp
+from Utility.logger import create_logger
 
 
 app = Flask(__name__)
 CORS(app)
 load_dotenv()
+
+
+logger = create_logger()
 
 @app.route('/')
 def hello():
@@ -26,6 +30,8 @@ def RetrieveData():
 
 
 app.register_blueprint(email_bp, url_prefix='/api')
+
+
 
     
 

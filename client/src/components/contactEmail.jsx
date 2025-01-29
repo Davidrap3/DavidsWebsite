@@ -37,6 +37,15 @@ const ContactEmail = () => {
         textArea.style.height = `${textArea.scrollHeight}px`;
     }
 
+    const clearEmailFields = () => {
+        setEmailInformation({
+            name: '',
+            email: '',
+            subject: '',
+            message: ''
+        });
+    }
+
 
     const sendEmail = async () => {
         try {
@@ -46,6 +55,7 @@ const ContactEmail = () => {
                 },
             });
             console.log(response.data);
+            clearEmailFields();
         } catch (err) {
             console.log("Error Sending Email", err)
         }
@@ -124,8 +134,11 @@ const ContactEmail = () => {
                         onBlur={() => handleBlur('message')}
                         />
                     </div>
-                    <div>
-                        <button type="reset">Clear</button>
+                    <div className={styles.EmailButtonsContainer}>
+                        <i 
+                        className={`${styles.IconGarbageClear} fa-regular fa-trash-can`} 
+                        onClick={clearEmailFields}>
+                        </i>  
                         <button type="submit" >Send Email</button>
                     </div>
                 </form>

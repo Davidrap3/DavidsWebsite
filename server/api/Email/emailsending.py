@@ -2,7 +2,7 @@ import smtplib
 import ssl
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
-
+from Utility.logger import create_logger
 
 class EmailSender:
     def __init__(self, smtp_server, smtp_port, sender_email, sender_password):
@@ -12,7 +12,7 @@ class EmailSender:
         self.sender_password = sender_password
         
         
-    def send_confirmation_email(self, recipients_email, name):
+    def send_confirmation_email(self, recipient_email, name):
         """
         Function to send a confirmation email to the recipient.
         Args:
@@ -22,10 +22,12 @@ class EmailSender:
         # Secure SSL Context
         context = ssl.create_default_context()
         
+        logger = create_logger()
+        logger.info("Testing Sending Confirm")
         try:
             confirm_msg = MIMEMultipart()
             confirm_msg['From'] = self.sender_email
-            confirm_msg['To'] = recipients_email
+            confirm_msg['To'] = recipient_email
             confirm_msg['Subject'] = "Thank you for contacting us!"
             confirm_body = f"""
                 Hi {name},
@@ -37,12 +39,14 @@ class EmailSender:
             """
             confirm_msg.attach(MIMEText(confirm_body, 'plain'))
             
-            with smtplib.SMTP(self.smtp_server, self.smtp_port, context=context) as server:
-                server.starttls()
-                server.login(self.sender_email, self.sender_password)
-                server.sendmail(self.sender_email, recipients_email, confirm_msg.as_string())
+            logger.info("Testing Sending Confirm")
             
-            return {'success': 'Success', 'message': 'Confirmation email sent successfully'}
+            with smtplib.SMTP(self.smtp_server, self.smtp_port) as server:
+                server.starttls(context=context)
+                server.login(self.sender_email, self.sender_password)
+                server.sendmail(self.sender_email, recipient_email, confirm_msg.as_string())
+            
+            return {'status': 'Success', 'message': 'Confirmation email sent successfully'}
         
         except Exception as e:
             return {'status': 'error', 'message': f'Failed to send confirmation email: {str(e)}'}
@@ -60,6 +64,9 @@ class EmailSender:
         # Secure SSL Context
         context = ssl.create_default_context()
 
+        logger = create_logger()
+        logger.info("Testing Sending Confirm")
+        
         try:
             user_msg = MIMEMultipart()
             user_msg['From'] = f"{name} <{recipient_email}>"
@@ -73,8 +80,8 @@ class EmailSender:
             """
             user_msg.attach(MIMEText(user_body, 'plain'))
 
-            with smtplib.SMTP(self.smtp_server, self.smtp_port, context=context) as server:
-                server.starttls()
+            with smtplib.SMTP(self.smtp_server, self.smtp_port) as server:
+                server.starttls(context=context)
                 server.login(self.sender_email, self.sender_password)
                 server.sendmail(self.sender_email, self.sender_email, user_msg.as_string())
             
