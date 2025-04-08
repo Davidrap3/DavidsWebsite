@@ -13,13 +13,6 @@ class EmailSender:
         
         
     def send_confirmation_email(self, recipient_email, name):
-        """
-        Function to send a confirmation email to the recipient.
-        Args:
-            recipient_email (str): Recipient's email address.
-            name (str): Name of the sender (used in the confirmation message).
-        """
-        # Secure SSL Context
         context = ssl.create_default_context()
         
         logger = create_logger()
@@ -53,15 +46,6 @@ class EmailSender:
         
     
     def send_user_message(self, recipient_email, subject, message, name):
-        """
-        Function to send the user's message to the support team (sender's email).
-        Args:
-            recipient_email (str): The email address of the sender (the user).
-            subject (str): Subject of the user's message.
-            message (str): Content of the user's message.
-            name (str): Name of the user (sender).
-        """
-        # Secure SSL Context
         context = ssl.create_default_context()
 
         logger = create_logger()

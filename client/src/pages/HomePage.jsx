@@ -65,11 +65,11 @@ const HomePage = () => {
     }, [data]);
     
 
-    if (!data || !data[0]?.specialDescription[0]) {
+    if (!Array.isArray(data) || !data[0]?.specialDescription?.[0]) {
         return <div>Loading...</div>; 
     }
 
-  
+    
     const { description, specialty, title } = data[0].specialDescription[0];
 
     return (
