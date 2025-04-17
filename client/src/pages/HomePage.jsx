@@ -7,7 +7,11 @@ import axios from 'axios';
 
 const HomePage = () => {
 
-    const [data, setData] = useState(null);
+    const [data, setData] = useState({
+        description: "Default Description", 
+        specialty: "Default Specialty",
+        title: "Default Title"
+    });
     const [counter, SetCounter] = useState(0);
     // Animation
     const [isVisible, setIsVisible] = useState(false);
@@ -27,10 +31,19 @@ const HomePage = () => {
                     }
                 });
 
-                setData(response.data);
+                if (response.data && response.data[0]?.specialDescription?.[0]) {
+                    const dataParsing = response.data[0].specialDescription[0]; 
+
+                    setData((prevData) => ({
+                        ...prevData,
+                        description: dataParsing.description,
+                        specialty: dataParsing.specialty,
+                        title: dataParsing.title
+                    }));
+                }
                 console.log(response.data);
             } catch (err) {
-                setData(err.message);
+                console.log("No Data Supplied")
             }
         };
 
@@ -64,14 +77,6 @@ const HomePage = () => {
         
     }, [data]);
     
-
-    if (!Array.isArray(data) || !data[0]?.specialDescription?.[0]) {
-        return <div>Loading...</div>; 
-    }
-
-    
-    const { description, specialty, title } = data[0].specialDescription[0];
-
     return (
         <div className={styles.container}>
             <div className={styles.carouselContainer}>
@@ -82,18 +87,18 @@ const HomePage = () => {
                     <h1 
                     ref={titleRef} 
                     className={`${styles.CanvasTitle} ${isVisible ? styles.Animate : ''}`}>
-                        {title}
+                        {data.title}
                     </h1>
                     <div className={styles.CanvasTextOuter}>
                         <p 
                         ref={specialtyRef}
                         className={`${styles.CanvasSpecialty} ${isSpecialtyVisible ? styles.Animate : ''}`}>
-                            {specialty}
+                            {data.specialty}
                         ​</p>
                         <p
                         ref={descriptionRef}
                         className={`${styles.CanvasDescription} ${isDescriptionVisible ? styles.Animate : ''}`}>
-                            {description}
+                            {data.description}
                         </p>
                     </div>
                 </section>
