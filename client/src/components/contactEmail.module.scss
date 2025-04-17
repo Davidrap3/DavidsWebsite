@@ -214,8 +214,38 @@
 
             .IconGarbageClear{
                 font-size: 20px;
-                color: gray;
+                color: rgb(194, 55, 55);
+                cursor: pointer;
             }
+
+            .IconGarbageClear:hover {
+                color: rgb(252, 0, 0);
+            }
+
+            .SendEmailBox {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background: none;
+                width: 30px;
+                border: none;
+
+
+                .IconSendEmail {
+                    font-size: 25px;
+                    //transform: rotate(90deg);
+                    color: rgb(40, 161, 121);
+                    transition: font-size 2s, ease-in-out;
+                    cursor: pointer;
+
+                }
+                
+                .IconSendEmail:hover {
+                    font-size: 28px;
+                    color: rgb(36, 241, 173);
+                }
+            }
+            
 
         }
     }

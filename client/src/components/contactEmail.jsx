@@ -138,8 +138,10 @@ const ContactEmail = () => {
                         <i 
                         className={`${styles.IconGarbageClear} fa-regular fa-trash-can`} 
                         onClick={clearEmailFields}>
-                        </i>  
-                        <button type="submit" >Send Email</button>
+                        </i> 
+                        <button className={`${styles.SendEmailBox}`} type="submit" >
+                            <i className={`${styles.IconSendEmail} fa-solid fa-arrow-right`}></i>
+                        </button>
                     </div>
                 </form>
             </div>

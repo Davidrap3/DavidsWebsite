@@ -5,15 +5,10 @@ const Footer = () => {
     return (
         <div className={styles.Footer}>
             <div>
-                <h2>Explore</h2>
-                <ul>
-                    <li>Home</li>
-                    <li>About</li>
-                    <li>Gallery</li>
-                </ul>
+                
             </div>
-            <div>
-                <p>Copyright © 2024 Studio M23</p>
+            <div className={styles.CopyRightCenter}>
+                <p>Copyright © 2025 Golden Sail</p>
             </div>
             <div>
                 <ul>
