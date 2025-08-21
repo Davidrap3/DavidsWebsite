@@ -17,7 +17,7 @@ const Header = () => {
                             <ul className={styles.HeaderLinksInner}>
                                 <li className={styles.HeaderLinks}><Link className={styles.LinkDecoration} to='/'>Home</Link></li>
                                 <li className={styles.HeaderLinks}><Link className={styles.LinkDecoration} to='/About'>About</Link></li>
-                                <li className={styles.HeaderLinks}><Link className={styles.LinkDecoration} to='/'>Gallary</Link></li>
+                                <li className={styles.HeaderLinks}><Link className={styles.LinkDecoration} to='/Gallery'>Gallery</Link></li>
                             </ul>
                         </nav>
                     </div>

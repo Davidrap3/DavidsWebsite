@@ -1,6 +1,7 @@
 import { Routes, Route, Navigate } from 'react-router-dom';
 import HomePage from '../pages/HomePage';
 import AboutPage from '../pages/AboutPage';
+import GalleryPage from '../pages/GalleryPage';
 
 export default function RoutesDM() {
 
@@ -8,6 +9,7 @@ export default function RoutesDM() {
         <Routes>
             <Route path="/" element={<HomePage />}/>
             <Route path="/About" element={<AboutPage />}/>
+            <Route path="/Gallery" element={<GalleryPage />}/>
         </Routes>
     )
 
