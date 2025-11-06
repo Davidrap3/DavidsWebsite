@@ -2,53 +2,26 @@ import { useEffect, useState } from 'react';
 import styles from './carousel.module.scss';
 
 const Carousel = () => {
-
-    const tempInfo = [
-        {
-            id: 1,
-            artName: "Samurai",
-            artImage: "images/testingImages/testing1.jpg",
-            description: "Text",
-            details: [ 
-                {
-                    dimensions: "24 x 36",
-                    concept: "Fairytale come to life",
-                    year: " 2023"
-                }
-            ]
-        },
-        {
-            id: 2,
-            artName: "Ship",
-            artImage: "images/testingImages/testing4.jpg",
-            description: "Text",
-            details: [ 
-                {
-                    dimensions: "38 x 48​ x 26 cm",
-                    concept: "Negative Space",
-                    year: " 2024"
-                }
-            ]
-        },
-        {
-            id: 3,
-            artName: "d​ynasty",
-            artImage: "images/testingImages/testing5.jpg",
-            description: "Text",
-            details: [ 
-                {
-                    dimensions: "30 x 40",
-                    concept: "Movement",
-                    year: " 2023"
-                }
-            ]
-        }
-    ]
-
+    const [tempInfo, setTempInfo] = useState([]);
+    const [siteContent, setSiteContent] = useState({ artistInfo: { artistName: "The Golden Sail", description: "" } });
     const [currentIndex, setCurrentIndex] = useState(0);
     const [touchPosition, setTouchPosition] = useState(null);
     const [pause, setPause] = useState(false);
     const [direction, setDirection] = useState(null);
+
+    useEffect(() => {
+        // Load carousel items
+        fetch('/data/carousel.json')
+            .then(response => response.json())
+            .then(data => setTempInfo(data))
+            .catch(error => console.error('Error loading carousel:', error));
+
+        // Load site content
+        fetch('/data/siteContent.json')
+            .then(response => response.json())
+            .then(data => setSiteContent(data))
+            .catch(error => console.error('Error loading site content:', error));
+    }, []);
 
     const nextSlide = () => {
         setDirection('right');
@@ -109,13 +82,13 @@ const Carousel = () => {
                 <p className={styles.CarouselTitle}>
                   The<br/>
                   Golden<br/>
-                  Sail  
+                  Sail
                 </p>
                 <p className={styles.CarouselArtist}>
                     Artist
                 </p>
                 <p className={styles.AuthorDescription}>
-                I've been sculpting professionally for eight ​years with my work (Golden Sail) being dis​played in the 2024 summer exhibition​ of the Royal Academy of arts. While being​ an artist is a difficult tug-of-war b​etween my inner dreamer and critic, I've gro​wn to love this process a lot. It hasn't​ just taught me much about the world,​ but als​o about myself.
+                    {siteContent.artistInfo.description}
                 </p>
             </div>
             <div className={styles.CarouselImagesContainer}>

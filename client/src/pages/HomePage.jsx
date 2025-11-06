@@ -2,17 +2,15 @@ import styles from './HomePage.module.scss';
 import Carousel from '../components/carousel';
 import Footer from '../components/footer';
 import ContactEmail from '../components/contactEmail';
-import { useEffect, useRef, useState, useLayoutEffect } from 'react';
-import axios from 'axios';
+import { useEffect, useRef, useState } from 'react';
 
 const HomePage = () => {
 
     const [data, setData] = useState({
-        description: "Default Description", 
+        description: "Default Description",
         specialty: "Default Specialty",
         title: "Default Title"
     });
-    const [counter, SetCounter] = useState(0);
     // Animation
     const [isVisible, setIsVisible] = useState(false);
     const [isSpecialtyVisible, setIsSpecialtyVisible] = useState(false);
@@ -21,33 +19,21 @@ const HomePage = () => {
     const titleRef = useRef(null);
     const specialtyRef = useRef(null);
     const descriptionRef = useRef(null);
-    
+
     useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const response = await axios.post('http://127.0.0.1:5000/api/HomeData', {
-                    headers: {
-                        'Content-Type': 'application/json',
-                    }
-                });
-
-                if (response.data && response.data[0]?.specialDescription?.[0]) {
-                    const dataParsing = response.data[0].specialDescription[0]; 
-
-                    setData((prevData) => ({
-                        ...prevData,
-                        description: dataParsing.description,
-                        specialty: dataParsing.specialty,
-                        title: dataParsing.title
-                    }));
+        // Load site content from JSON file
+        fetch('/data/siteContent.json')
+            .then(response => response.json())
+            .then(content => {
+                if (content.artistInfo) {
+                    setData({
+                        description: content.artistInfo.specialty,
+                        specialty: content.artistInfo.specialty,
+                        title: content.artistInfo.title
+                    });
                 }
-                console.log(response.data);
-            } catch (err) {
-                console.log("No Data Supplied")
-            }
-        };
-
-        fetchData();
+            })
+            .catch(error => console.error('Error loading site content:', error));
     }, []);
 
     useEffect(() => {

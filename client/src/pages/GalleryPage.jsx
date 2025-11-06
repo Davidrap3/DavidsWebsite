@@ -1,66 +1,25 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import styles from './GalleryPage.module.scss';
 import Footer from '../components/footer';
 
 const GalleryPage = () => {
     const [selectedImage, setSelectedImage] = useState(null);
+    const [galleryImages, setGalleryImages] = useState([]);
+    const [siteContent, setSiteContent] = useState({ gallery: { title: "Gallery", subtitle: "" } });
 
-    const galleryImages = [
-        {
-            id: 1,
-            src: "images/testingImages/testing1.jpg",
-            title: "Samurai",
-            description: "Wire art sculpture depicting a samurai warrior",
-            dimensions: "24 x 36",
-            year: "2023",
-            medium: "Wire and clay"
-        },
-        {
-            id: 2,
-            src: "images/testingImages/testing2.jpg",
-            title: "Abstract Form",
-            description: "Abstract sculpture exploring form and negative space",
-            dimensions: "30 x 40",
-            year: "2023",
-            medium: "Recycled materials"
-        },
-        {
-            id: 3,
-            src: "images/testingImages/testing3.jpg",
-            title: "Ocean Waves",
-            description: "Flowing sculpture inspired by ocean movement",
-            dimensions: "35 x 28",
-            year: "2024",
-            medium: "Wire and clay"
-        },
-        {
-            id: 4,
-            src: "images/testingImages/testing4.jpg",
-            title: "Ship",
-            description: "Maritime-inspired sculpture with emphasis on negative space",
-            dimensions: "38 x 48 x 26 cm",
-            year: "2024",
-            medium: "Mixed media"
-        },
-        {
-            id: 5,
-            src: "images/testingImages/testing5.jpg",
-            title: "Dynasty",
-            description: "Sculpture capturing movement and historical essence",
-            dimensions: "30 x 40",
-            year: "2023",
-            medium: "Wire art"
-        },
-        {
-            id: 6,
-            src: "images/testingImages/testing6.jpg",
-            title: "Golden Expression",
-            description: "Contemporary piece exploring artistic expression",
-            dimensions: "32 x 45",
-            year: "2024",
-            medium: "Clay and recycled materials"
-        }
-    ];
+    useEffect(() => {
+        // Load gallery items
+        fetch('/data/gallery.json')
+            .then(response => response.json())
+            .then(data => setGalleryImages(data))
+            .catch(error => console.error('Error loading gallery:', error));
+
+        // Load site content
+        fetch('/data/siteContent.json')
+            .then(response => response.json())
+            .then(data => setSiteContent(data))
+            .catch(error => console.error('Error loading site content:', error));
+    }, []);
 
     const openModal = (image) => {
         setSelectedImage(image);
@@ -79,8 +38,8 @@ const GalleryPage = () => {
     return (
         <div className={styles.Container}>
             <div className={styles.GalleryHeader}>
-                <h1 className={styles.Title}>Gallery</h1>
-                <p className={styles.Subtitle}>A collection of wire art sculptures using clay and recycled materials</p>
+                <h1 className={styles.Title}>{siteContent.gallery.title}</h1>
+                <p className={styles.Subtitle}>{siteContent.gallery.subtitle}</p>
             </div>
             
             <div className={styles.GalleryGrid}>
