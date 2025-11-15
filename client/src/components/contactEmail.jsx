@@ -1,5 +1,5 @@
 import { useState, useRef } from 'react';
-import axios from 'axios';
+import emailjs from '@emailjs/browser';
 import styles from './contactEmail.module.scss';
 
 const ContactEmail = () => {
@@ -47,17 +47,32 @@ const ContactEmail = () => {
     }
 
 
-    const sendEmail = async () => {
+    const sendEmail = async (e) => {
         try {
-            const response = await axios.post('http://127.0.0.1:5000/api/send-email' , emailInformation, {
-                headers: {
-                    'Content-Type': 'application/json'
+            // EmailJS configuration - replace these with your actual values from emailjs.com
+            const serviceID = process.env.REACT_APP_EMAILJS_SERVICE_ID || 'YOUR_SERVICE_ID';
+            const templateID = process.env.REACT_APP_EMAILJS_TEMPLATE_ID || 'YOUR_TEMPLATE_ID';
+            const publicKey = process.env.REACT_APP_EMAILJS_PUBLIC_KEY || 'YOUR_PUBLIC_KEY';
+
+            // Send email using EmailJS
+            const response = await emailjs.send(
+                serviceID,
+                templateID,
+                {
+                    from_name: emailInformation.name,
+                    from_email: emailInformation.email,
+                    subject: emailInformation.subject,
+                    message: emailInformation.message,
                 },
-            });
-            console.log(response.data);
+                publicKey
+            );
+
+            console.log('Email sent successfully:', response);
+            alert('Email sent successfully!');
             clearEmailFields();
         } catch (err) {
-            console.log("Error Sending Email", err)
+            console.log("Error Sending Email", err);
+            alert('Failed to send email. Please try again.');
         }
     }
 
