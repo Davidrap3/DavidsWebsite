@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/DavidsWebsite/static/css/main.c575a749.css",
+    "main.css": "/DavidsWebsite/static/css/main.8f41866f.css",
     "main.js": "/DavidsWebsite/static/js/main.305203a7.js",
     "static/media/fa-solid-900.ttf": "/DavidsWebsite/static/media/fa-solid-900.07ed6d5fa32c1d54af0f.ttf",
     "static/media/fa-brands-400.ttf": "/DavidsWebsite/static/media/fa-brands-400.0ff70dcbf135d859ebf3.ttf",
@@ -12,11 +12,11 @@
     "static/media/fa-v4compatibility.ttf": "/DavidsWebsite/static/media/fa-v4compatibility.0f6cb412603527bda691.ttf",
     "static/media/fa-v4compatibility.woff2": "/DavidsWebsite/static/media/fa-v4compatibility.6cfec8414be20e2c3426.woff2",
     "index.html": "/DavidsWebsite/index.html",
-    "main.c575a749.css.map": "/DavidsWebsite/static/css/main.c575a749.css.map",
+    "main.8f41866f.css.map": "/DavidsWebsite/static/css/main.8f41866f.css.map",
     "main.305203a7.js.map": "/DavidsWebsite/static/js/main.305203a7.js.map"
   },
   "entrypoints": [
-    "static/css/main.c575a749.css",
+    "static/css/main.8f41866f.css",
     "static/js/main.305203a7.js"
   ]
 }
