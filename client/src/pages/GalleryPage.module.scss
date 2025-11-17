@@ -45,6 +45,7 @@
     background: white;
     border: none;
     padding: 0;
+    padding-bottom: 60px; // Space for caption below image
     width: 100%;
     text-align: left;
 }
@@ -67,35 +68,36 @@
 }
 
 .GalleryItem:hover .GalleryImage {
-    transform: scale(1.05);
+    transform: scale(1.02); // Subtle zoom, not too much
 }
 
+// Remove overlay - show caption below image instead
 .ImageOverlay {
     position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
-    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
-    color: white;
-    padding: 30px 20px 20px;
-    transform: translateY(100%);
-    transition: transform 0.3s ease;
-}
-
-.GalleryItem:hover .ImageOverlay {
-    transform: translateY(0);
+    background: white; // Clean white background
+    color: #333; // Dark text on white
+    padding: 12px 16px;
+    transform: translateY(0); // Always visible (museum label style)
+    transition: none;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .ImageTitle {
-    font-size: 1.4rem;
+    font-size: 1.1rem;
     font-weight: 600;
-    margin: 0 0 8px 0;
+    margin: 0 0 4px 0;
+    color: #2c3e50;
 }
 
 .ImageYear {
-    font-size: 1rem;
-    opacity: 0.9;
+    font-size: 0.9rem;
+    opacity: 0.7;
     margin: 0;
+    color: #6c757d;
+    font-style: italic;
 }
 
 .Modal {
@@ -207,38 +209,51 @@
     .Container {
         padding-top: 80px;
     }
-    
+
     .Title {
         font-size: 2.5rem;
     }
-    
+
     .GalleryGrid {
         grid-template-columns: 1fr;
         gap: 20px;
         padding: 0 20px 60px;
     }
-    
+
     .GalleryItem {
         max-width: 100%;
+        padding-bottom: 55px; // Slightly less space on mobile
     }
-    
+
     .GalleryImage {
         height: 250px;
     }
-    
+
+    .ImageOverlay {
+        padding: 10px 14px; // Slightly less padding on mobile
+    }
+
+    .ImageTitle {
+        font-size: 1rem;
+    }
+
+    .ImageYear {
+        font-size: 0.85rem;
+    }
+
     .ModalContent {
         margin: 10px;
         max-height: 95vh;
     }
-    
+
     .ModalInfo {
         padding: 20px;
     }
-    
+
     .ModalTitle {
         font-size: 1.5rem;
     }
-    
+
     .DetailRow {
         flex-direction: column;
         align-items: flex-start;
