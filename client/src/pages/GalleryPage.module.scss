@@ -150,15 +150,20 @@
 
 .ModalImageContainer {
     width: 100%;
-    max-height: 60vh;
-    overflow: hidden;
+    max-height: 75vh; // Increased from 60vh to show more of the artwork
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f8f9fa; // Light background in case of transparency
     border-radius: 16px 16px 0 0;
+    overflow: hidden;
 }
 
 .ModalImage {
     width: 100%;
     height: auto;
-    object-fit: cover;
+    max-height: 75vh;
+    object-fit: contain; // Changed from cover - shows FULL artwork without cropping
 }
 
 .ModalInfo {
@@ -244,6 +249,15 @@
     .ModalContent {
         margin: 10px;
         max-height: 95vh;
+    }
+
+    .ModalImageContainer {
+        max-height: 60vh; // Smaller on mobile to leave room for details
+        border-radius: 8px 8px 0 0;
+    }
+
+    .ModalImage {
+        max-height: 60vh;
     }
 
     .ModalInfo {
