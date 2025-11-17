@@ -9,13 +9,20 @@ const GalleryPage = () => {
 
     useEffect(() => {
         // Load gallery items
-        fetch('/data/gallery.json')
+        fetch(`${process.env.PUBLIC_URL}/data/gallery.json`)
             .then(response => response.json())
-            .then(data => setGalleryImages(data))
+            .then(data => {
+                // Prepend PUBLIC_URL to image paths
+                const imagesWithUrl = data.map(img => ({
+                    ...img,
+                    src: `${process.env.PUBLIC_URL}/${img.src}`
+                }));
+                setGalleryImages(imagesWithUrl);
+            })
             .catch(error => console.error('Error loading gallery:', error));
 
         // Load site content
-        fetch('/data/siteContent.json')
+        fetch(`${process.env.PUBLIC_URL}/data/siteContent.json`)
             .then(response => response.json())
             .then(data => setSiteContent(data))
             .catch(error => console.error('Error loading site content:', error));

@@ -22,7 +22,7 @@ const HomePage = () => {
 
     useEffect(() => {
         // Load site content from JSON file
-        fetch('/data/siteContent.json')
+        fetch(`${process.env.PUBLIC_URL}/data/siteContent.json`)
             .then(response => response.json())
             .then(content => {
                 if (content.artistInfo) {
@@ -90,7 +90,7 @@ const HomePage = () => {
                 </section>
                 <div className={styles.AboutImageContainer}>
                     <div className={styles.AboutImageBorder}>
-                        <img className={styles.AboutImageSize} draggable="false" src='images/testingImages/testing6.jpg'/>
+                        <img className={styles.AboutImageSize} draggable="false" src={`${process.env.PUBLIC_URL}/images/testingImages/testing6.jpg`} alt="Artwork"/>
                     </div>
                 </div>
             </div>

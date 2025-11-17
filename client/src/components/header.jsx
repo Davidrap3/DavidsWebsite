@@ -6,7 +6,7 @@ const Header = () => {
         <div className={styles.HeaderContainer}>
             <div className={styles.HeaderContainerInner}>
                 <div className={styles.HeaderLeft}>
-                    <img className= {styles.HeaderLogo} src='images/templogo.svg'></img>
+                    <img className= {styles.HeaderLogo} src={`${process.env.PUBLIC_URL}/images/templogo.svg`} alt="The Golden Sail Logo"></img>
                 </div>
                 <div className={styles.HeaderCenter}>
                     <p className={styles.HeaderTitle}>The Golden Sail</p>

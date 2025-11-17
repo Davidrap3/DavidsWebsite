@@ -11,13 +11,20 @@ const Carousel = () => {
 
     useEffect(() => {
         // Load carousel items
-        fetch('/data/carousel.json')
+        fetch(`${process.env.PUBLIC_URL}/data/carousel.json`)
             .then(response => response.json())
-            .then(data => setTempInfo(data))
+            .then(data => {
+                // Prepend PUBLIC_URL to image paths
+                const itemsWithUrl = data.map(item => ({
+                    ...item,
+                    artImage: `${process.env.PUBLIC_URL}/${item.artImage}`
+                }));
+                setTempInfo(itemsWithUrl);
+            })
             .catch(error => console.error('Error loading carousel:', error));
 
         // Load site content
-        fetch('/data/siteContent.json')
+        fetch(`${process.env.PUBLIC_URL}/data/siteContent.json`)
             .then(response => response.json())
             .then(data => setSiteContent(data))
             .catch(error => console.error('Error loading site content:', error));
