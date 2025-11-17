@@ -208,59 +208,67 @@
     .CarouselContainer {
         flex-direction: column;
         height: auto;
-        min-height: 500px;
-        padding: 20px 0;
+        min-height: auto;
+        margin-top: 60px; // Add space below sticky header
+        padding: 0;
     }
 
+    // Hide redundant "The Golden Sail" section on mobile (it's already in header!)
     .CarouselAuthor {
-        width: 100%;
-        padding: 20px;
-        border-right: none;
-        border-bottom: 2px solid rgba(255, 255, 255, 0.1);
-
-        .CarouselTitle {
-            font-size: 40px;
-            margin-bottom: 10px;
-        }
-
-        .CarouselArtist {
-            font-size: 14px;
-        }
-
-        .AuthorDescription {
-            font-size: 14px;
-        }
+        display: none;
     }
 
     .CarouselImagesContainer {
         width: 100%;
-        height: 500px;
+        height: auto;
+        min-height: 450px;
+        padding: 20px 10px;
 
         .CarouselItem {
             flex-direction: column;
-            padding: 20px;
+            align-items: center;
+            padding: 10px;
+            gap: 15px;
 
             .ArtImage {
                 width: 100%;
-                max-width: 350px;
-                height: 300px;
+                max-width: 90%;
+                height: auto;
+                max-height: 300px;
+                object-fit: contain;
+                border-radius: 8px;
             }
 
             .ArtDetails {
                 width: 100%;
-                padding: 20px 0;
+                padding: 0 10px;
+                text-align: center;
 
                 .ArtName {
-                    font-size: 24px;
+                    font-size: 22px;
+                    margin-bottom: 8px;
                 }
 
                 .Description {
                     font-size: 14px;
+                    margin-bottom: 12px;
                 }
 
                 .DetailSection {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 6px;
+
                     .DetailSectionText {
-                        font-size: 12px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        gap: 8px;
+                        font-size: 13px;
+
+                        p:first-child {
+                            font-weight: 600;
+                        }
                     }
                 }
             }
@@ -268,70 +276,63 @@
     }
 
     .CarouselArrows {
-        width: 40px;
-        height: 40px;
+        width: 45px;
+        height: 45px;
+        background-color: rgba(0, 0, 0, 0.5);
+        border-radius: 50%;
     }
 
     .CarouselLeft {
-        left: 10px !important;
+        left: 5px !important;
+        top: 40%;
     }
 
     .CarouselRight {
-        right: 10px !important;
+        right: 5px !important;
+        top: 40%;
     }
 
     .Indicators {
-        bottom: 10px;
+        top: auto;
+        bottom: 15px;
+        right: auto;
+        left: 50%;
+        transform: translateX(-50%);
     }
 }
 
 @media (max-width: 480px) {
     .CarouselContainer {
-        min-height: 600px;
-    }
-
-    .CarouselAuthor {
-        padding: 15px;
-
-        .CarouselTitle {
-            font-size: 32px;
-        }
-
-        .CarouselArtist {
-            font-size: 12px;
-        }
-
-        .AuthorDescription {
-            font-size: 12px;
-        }
+        margin-top: 50px; // Adjusted for smaller mobile header
     }
 
     .CarouselImagesContainer {
-        height: auto;
+        min-height: 400px;
+        padding: 15px 5px;
 
         .CarouselItem {
-            padding: 15px;
-
             .ArtImage {
-                max-width: 280px;
-                height: 250px;
+                max-width: 95%;
+                max-height: 250px;
             }
 
             .ArtDetails {
-                padding: 15px 0;
+                padding: 0 5px;
 
                 .ArtName {
-                    font-size: 20px;
+                    font-size: 18px;
+                    margin-bottom: 6px;
                 }
 
                 .Description {
                     font-size: 12px;
+                    margin-bottom: 10px;
                 }
 
                 .DetailSection {
                     .DetailSectionText {
                         font-size: 11px;
-                        gap: 5px;
+                        gap: 6px;
                     }
                 }
             }
@@ -339,8 +340,8 @@
     }
 
     .CarouselArrows {
-        width: 35px;
-        height: 35px;
+        width: 38px;
+        height: 38px;
 
         .CarouselIconLeft {
             font-size: 16px;
@@ -348,9 +349,17 @@
     }
 
     .Indicators {
+        bottom: 10px;
+
         .indicator {
-            width: 8px;
-            height: 8px;
+            width: 7px;
+            height: 7px;
+            margin: 0 0.25rem;
+        }
+
+        .indicatorInactive {
+            width: 5px;
+            height: 5px;
         }
     }
 }

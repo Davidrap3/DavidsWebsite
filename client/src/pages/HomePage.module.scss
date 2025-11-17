@@ -149,7 +149,8 @@
 @media (max-width: 768px) {
     .carouselContainer {
         height: auto;
-        min-height: 400px;
+        min-height: auto; // Let carousel determine its own height
+        margin-top: 0; // Remove margin, carousel handles its own spacing
     }
 
     .AboutSection {
@@ -196,7 +197,7 @@
 
 @media (max-width: 480px) {
     .carouselContainer {
-        min-height: 300px;
+        min-height: auto; // Let carousel determine its own height
     }
 
     .AboutSection {
