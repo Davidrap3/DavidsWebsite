@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/DavidsWebsite/static/css/main.a83962bb.css",
+    "main.js": "/DavidsWebsite/static/js/main.b244b95f.js",
+    "static/media/fa-solid-900.ttf": "/DavidsWebsite/static/media/fa-solid-900.07ed6d5fa32c1d54af0f.ttf",
+    "static/media/fa-brands-400.ttf": "/DavidsWebsite/static/media/fa-brands-400.0ff70dcbf135d859ebf3.ttf",
+    "static/media/fa-solid-900.woff2": "/DavidsWebsite/static/media/fa-solid-900.93f719f4d62bfa3e748c.woff2",
+    "static/media/fa-brands-400.woff2": "/DavidsWebsite/static/media/fa-brands-400.bb8d5a145e22822103fb.woff2",
+    "static/media/fa-regular-400.ttf": "/DavidsWebsite/static/media/fa-regular-400.17a6e1aebccdbaa39e78.ttf",
+    "static/media/FontsFree-Net-Dream-Avenue.ttf": "/DavidsWebsite/static/media/FontsFree-Net-Dream-Avenue.c5cd3fc9b0ec474ff098.ttf",
+    "static/media/fa-regular-400.woff2": "/DavidsWebsite/static/media/fa-regular-400.bc3722686635b5f86132.woff2",
+    "static/media/fa-v4compatibility.ttf": "/DavidsWebsite/static/media/fa-v4compatibility.0f6cb412603527bda691.ttf",
+    "static/media/fa-v4compatibility.woff2": "/DavidsWebsite/static/media/fa-v4compatibility.6cfec8414be20e2c3426.woff2",
+    "static/media/logo.svg": "/DavidsWebsite/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/DavidsWebsite/index.html",
+    "main.a83962bb.css.map": "/DavidsWebsite/static/css/main.a83962bb.css.map",
+    "main.b244b95f.js.map": "/DavidsWebsite/static/js/main.b244b95f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a83962bb.css",
+    "static/js/main.b244b95f.js"
+  ]
+}

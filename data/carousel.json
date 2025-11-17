@@ -1,0 +1,41 @@
+[
+    {
+        "id": 1,
+        "artName": "Samurai",
+        "artImage": "images/testingImages/testing1.jpg",
+        "description": "Text",
+        "details": [
+            {
+                "dimensions": "24 x 36",
+                "concept": "Fairytale come to life",
+                "year": " 2023"
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "artName": "Ship",
+        "artImage": "images/testingImages/testing4.jpg",
+        "description": "Text",
+        "details": [
+            {
+                "dimensions": "38 x 48​ x 26 cm",
+                "concept": "Negative Space",
+                "year": " 2024"
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "artName": "d​ynasty",
+        "artImage": "images/testingImages/testing5.jpg",
+        "description": "Text",
+        "details": [
+            {
+                "dimensions": "30 x 40",
+                "concept": "Movement",
+                "year": " 2023"
+            }
+        ]
+    }
+]
