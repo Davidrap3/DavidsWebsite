@@ -16,6 +16,8 @@ const ContactEmail = () => {
         subject: false,
         message: false
     });
+    const [submitStatus, setSubmitStatus] = useState({ type: '', message: '' });
+    const [isSubmitting, setIsSubmitting] = useState(false);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -23,7 +25,6 @@ const ContactEmail = () => {
     };
 
     const handleFocus = (field) => {
-        console.log("Test")
         setFocus((prev) => ({...focus, [field]: true}));
     };
 
@@ -48,6 +49,9 @@ const ContactEmail = () => {
 
 
     const sendEmail = async (e) => {
+        setIsSubmitting(true);
+        setSubmitStatus({ type: '', message: '' });
+
         try {
             // EmailJS configuration - replace these with your actual values from emailjs.com
             const serviceID = process.env.REACT_APP_EMAILJS_SERVICE_ID || 'YOUR_SERVICE_ID';
@@ -68,11 +72,19 @@ const ContactEmail = () => {
             );
 
             console.log('Email sent successfully:', response);
-            alert('Email sent successfully!');
+            setSubmitStatus({
+                type: 'success',
+                message: 'Thank you! Your message has been sent successfully.'
+            });
             clearEmailFields();
         } catch (err) {
-            console.log("Error Sending Email", err);
-            alert('Failed to send email. Please try again.');
+            console.error("Error Sending Email", err);
+            setSubmitStatus({
+                type: 'error',
+                message: 'Failed to send email. Please try again or contact us directly.'
+            });
+        } finally {
+            setIsSubmitting(false);
         }
     }
 
@@ -92,25 +104,34 @@ const ContactEmail = () => {
                 >
                     <div className={styles.emailRow}>
                         <div className={styles.nameEmail}>
-                            <label className={focus.name ? styles.focusedLabel : styles.unFocussedLabel}>
+                            <label
+                                htmlFor="contact-name"
+                                className={focus.name ? styles.focusedLabel : styles.unFocussedLabel}
+                            >
                                 Your Name
                             </label>
                             <input
+                            id="contact-name"
                             className={styles.nameEmailInput}
                             type='text'
                             name='name'
                             placeholder='Enter your name'
                             value={emailInformation.name}
-                            onChange={handleChange}  
+                            onChange={handleChange}
                             onFocus={() => handleFocus('name')}
                             onBlur={() => handleBlur('name')}
+                            required
                             />
                         </div>
                         <div className={styles.emailEmail}>
-                            <label className={focus.email ? styles.focusedLabel : styles.unFocussedLabel}>
+                            <label
+                                htmlFor="contact-email"
+                                className={focus.email ? styles.focusedLabel : styles.unFocussedLabel}
+                            >
                                 Email Address
                             </label>
                             <input
+                            id="contact-email"
                             className={styles.emailEmailInput}
                             type='email'
                             name='email'
@@ -119,12 +140,19 @@ const ContactEmail = () => {
                             onChange={handleChange}
                             onFocus={() => handleFocus('email')}
                             onBlur={() => handleBlur('email')}
+                            required
                             />
                         </div>
                     </div>
                     <div className={styles.subjectEmail}>
-                        <label className={focus.subject ? styles.focusedLabel : styles.unFocussedLabel}>Subject</label>
+                        <label
+                            htmlFor="contact-subject"
+                            className={focus.subject ? styles.focusedLabel : styles.unFocussedLabel}
+                        >
+                            Subject
+                        </label>
                         <input
+                        id="contact-subject"
                         className={styles.subjectEmailInput}
                         type='text'
                         name='subject'
@@ -133,11 +161,18 @@ const ContactEmail = () => {
                         onChange={handleChange}
                         onFocus={() => handleFocus('subject')}
                         onBlur={() => handleBlur('subject')}
+                        required
                         />
                     </div>
                     <div className={styles.messageEmail}>
-                        <label className={focus.message ? styles.focusedLabel : styles.unFocussedLabel}>Your Message</label>
+                        <label
+                            htmlFor="contact-message"
+                            className={focus.message ? styles.focusedLabel : styles.unFocussedLabel}
+                        >
+                            Your Message
+                        </label>
                         <textarea
+                        id="contact-message"
                         className={styles.messageEmailTextBox}
                         name='message'
                         placeholder='Hi, I think we need a design system for our products at Company X. How soon can you hop on to discuss this?'
@@ -147,15 +182,29 @@ const ContactEmail = () => {
                         onChange={handleChange}
                         onFocus={() => handleFocus('message')}
                         onBlur={() => handleBlur('message')}
+                        required
                         />
                     </div>
+                    {submitStatus.message && (
+                        <div className={submitStatus.type === 'success' ? styles.SuccessMessage : styles.ErrorMessage} role="alert">
+                            {submitStatus.message}
+                        </div>
+                    )}
                     <div className={styles.EmailButtonsContainer}>
-                        <i 
-                        className={`${styles.IconGarbageClear} fa-regular fa-trash-can`} 
-                        onClick={clearEmailFields}>
-                        </i> 
-                        <button className={`${styles.SendEmailBox}`} type="submit" >
-                            <i className={`${styles.IconSendEmail} fa-solid fa-arrow-right`}></i>
+                        <button
+                            type="button"
+                            className={`${styles.IconGarbageClear} fa-regular fa-trash-can`}
+                            onClick={clearEmailFields}
+                            aria-label="Clear form"
+                            disabled={isSubmitting}
+                        >
+                        </button>
+                        <button className={`${styles.SendEmailBox}`} type="submit" aria-label="Send message" disabled={isSubmitting}>
+                            {isSubmitting ? (
+                                <i className={`${styles.IconSendEmail} fa-solid fa-spinner fa-spin`} aria-hidden="true"></i>
+                            ) : (
+                                <i className={`${styles.IconSendEmail} fa-solid fa-arrow-right`} aria-hidden="true"></i>
+                            )}
                         </button>
                     </div>
                 </form>

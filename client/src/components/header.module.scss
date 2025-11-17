@@ -86,4 +86,84 @@
 .LinkDecoration {
     text-decoration: none;
     color: aliceblue;
+    transition: color 0.3s ease;
+
+    &:hover {
+        color: var(--color-accent);
+    }
+}
+
+.ActiveLink {
+    color: var(--color-accent);
+    font-weight: 600;
+}
+
+// Mobile Responsive Media Queries
+@media (max-width: 768px) {
+    .HeaderContainer {
+        height: 60px;
+    }
+
+    .HeaderCenter {
+        .HeaderTitle {
+            font-size: 20px;
+        }
+    }
+
+    .HeaderLogo {
+        height: 40px;
+        margin-left: 5px;
+    }
+
+    .HeaderLinksInner {
+        flex-direction: row;
+        gap: 10px;
+    }
+
+    .HeaderLinks {
+        margin-right: 10px;
+        font-size: 14px;
+    }
+
+    .HeaderLinksContainer {
+        margin-right: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .HeaderContainer {
+        height: 50px;
+    }
+
+    .HeaderContainerInner {
+        padding: 0 5px;
+    }
+
+    .HeaderLeft {
+        flex: 2;
+    }
+
+    .HeaderCenter {
+        flex: 4;
+        .HeaderTitle {
+            font-size: 16px;
+        }
+    }
+
+    .HeaderRight {
+        flex: 3;
+    }
+
+    .HeaderLogo {
+        height: 35px;
+    }
+
+    .HeaderLinks {
+        margin-right: 5px;
+        font-size: 12px;
+    }
+
+    .HeaderLinksContainer {
+        margin-right: 5px;
+    }
 }

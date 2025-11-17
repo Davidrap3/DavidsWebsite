@@ -42,3 +42,52 @@
         }
     }
 }
+
+// Mobile Responsive Media Queries
+@media (max-width: 768px) {
+    .Footer {
+        flex-direction: column;
+        padding: 20px 0;
+        gap: 15px;
+
+        .CopyRightCenter {
+            width: 100%;
+            font-size: 14px;
+        }
+
+        .FooterContainer {
+            width: 100%;
+
+            .FooterIcons {
+                padding: 0 15px;
+            }
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .Footer {
+        padding: 15px 0;
+        gap: 10px;
+
+        .CopyRightCenter {
+            font-size: 12px;
+            height: auto;
+        }
+
+        .FooterContainer {
+            .FooterIcons {
+                padding: 0 10px;
+
+                img {
+                    height: 18px;
+                }
+
+                .facebookIcon {
+                    padding-right: 20px;
+                    height: 18px;
+                }
+            }
+        }
+    }
+}

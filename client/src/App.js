@@ -1,15 +1,16 @@
-import logo from './logo.svg';
 import './App.css';
 import RoutesDM from './routing/RoutesDM';
 import Header from './components/header';
-import Footer from './components/footer';
+import ErrorBoundary from './components/ErrorBoundary';
 
 function App() {
   return (
-   <>
+   <ErrorBoundary>
       <Header />
+      <main>
         <RoutesDM />
-   </>
+      </main>
+   </ErrorBoundary>
   );
 }
 

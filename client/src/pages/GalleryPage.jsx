@@ -36,11 +36,52 @@ const GalleryPage = () => {
         setSelectedImage(null);
     };
 
+    const nextImage = () => {
+        if (selectedImage) {
+            const currentIndex = galleryImages.findIndex(img => img.id === selectedImage.id);
+            const nextIndex = (currentIndex + 1) % galleryImages.length;
+            setSelectedImage(galleryImages[nextIndex]);
+        }
+    };
+
+    const prevImage = () => {
+        if (selectedImage) {
+            const currentIndex = galleryImages.findIndex(img => img.id === selectedImage.id);
+            const prevIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
+            setSelectedImage(galleryImages[prevIndex]);
+        }
+    };
+
     const handleModalClick = (e) => {
         if (e.target.classList.contains(styles.Modal)) {
             closeModal();
         }
     };
+
+    const handleKeyDown = (e) => {
+        if (!selectedImage) return;
+
+        switch(e.key) {
+            case 'Escape':
+                closeModal();
+                break;
+            case 'ArrowRight':
+                nextImage();
+                break;
+            case 'ArrowLeft':
+                prevImage();
+                break;
+            default:
+                break;
+        }
+    };
+
+    useEffect(() => {
+        if (selectedImage) {
+            document.addEventListener('keydown', handleKeyDown);
+            return () => document.removeEventListener('keydown', handleKeyDown);
+        }
+    }, [selectedImage, galleryImages]);
 
     return (
         <div className={styles.Container}>
@@ -51,37 +92,54 @@ const GalleryPage = () => {
             
             <div className={styles.GalleryGrid}>
                 {galleryImages.map((image) => (
-                    <div key={image.id} className={styles.GalleryItem} onClick={() => openModal(image)}>
-                        <img 
-                            src={image.src} 
+                    <button
+                        key={image.id}
+                        className={styles.GalleryItem}
+                        onClick={() => openModal(image)}
+                        aria-label={`View ${image.title}, created in ${image.year}`}
+                    >
+                        <img
+                            src={image.src}
                             alt={image.title}
                             className={styles.GalleryImage}
                             draggable="false"
+                            loading="lazy"
                         />
                         <div className={styles.ImageOverlay}>
                             <h3 className={styles.ImageTitle}>{image.title}</h3>
                             <p className={styles.ImageYear}>{image.year}</p>
                         </div>
-                    </div>
+                    </button>
                 ))}
             </div>
 
             {selectedImage && (
-                <div className={styles.Modal} onClick={handleModalClick}>
+                <div
+                    className={styles.Modal}
+                    onClick={handleModalClick}
+                    role="dialog"
+                    aria-modal="true"
+                    aria-labelledby="modal-title"
+                >
                     <div className={styles.ModalContent}>
-                        <button className={styles.CloseButton} onClick={closeModal}>
-                            <i className="fa-solid fa-xmark"></i>
+                        <button
+                            className={styles.CloseButton}
+                            onClick={closeModal}
+                            aria-label="Close modal"
+                        >
+                            <i className="fa-solid fa-xmark" aria-hidden="true"></i>
                         </button>
                         <div className={styles.ModalImageContainer}>
-                            <img 
-                                src={selectedImage.src} 
+                            <img
+                                src={selectedImage.src}
                                 alt={selectedImage.title}
                                 className={styles.ModalImage}
                                 draggable="false"
+                                loading="lazy"
                             />
                         </div>
                         <div className={styles.ModalInfo}>
-                            <h2 className={styles.ModalTitle}>{selectedImage.title}</h2>
+                            <h2 id="modal-title" className={styles.ModalTitle}>{selectedImage.title}</h2>
                             <p className={styles.ModalDescription}>{selectedImage.description}</p>
                             <div className={styles.ModalDetails}>
                                 <div className={styles.DetailRow}>

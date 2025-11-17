@@ -43,11 +43,20 @@
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
     background: white;
+    border: none;
+    padding: 0;
+    width: 100%;
+    text-align: left;
 }
 
 .GalleryItem:hover {
     transform: translateY(-8px);
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.GalleryItem:focus-visible {
+    outline: 3px solid var(--color-accent);
+    outline-offset: 2px;
 }
 
 .GalleryImage {

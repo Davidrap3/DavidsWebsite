@@ -90,7 +90,7 @@ const HomePage = () => {
                 </section>
                 <div className={styles.AboutImageContainer}>
                     <div className={styles.AboutImageBorder}>
-                        <img className={styles.AboutImageSize} draggable="false" src={`${process.env.PUBLIC_URL}/images/testingImages/testing6.jpg`} alt="Artwork"/>
+                        <img className={styles.AboutImageSize} draggable="false" src={`${process.env.PUBLIC_URL}/images/testingImages/testing6.jpg`} alt="Artwork" loading="lazy"/>
                     </div>
                 </div>
             </div>
