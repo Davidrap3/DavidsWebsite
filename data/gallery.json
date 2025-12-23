@@ -1,56 +1,466 @@
 [
     {
         "id": 1,
-        "src": "images/testingImages/testing1.jpg",
-        "title": "Samurai",
-        "description": "Wire art sculpture depicting a samurai warrior",
-        "dimensions": "24 x 36",
-        "year": "2023",
-        "medium": "Wire and clay"
+        "images": [
+            "images/testingImages/8fe6465e-8893-4f82-b9ad-c69665713ce1.jpg",
+            "images/testingImages/1351cb46-31e3-444b-b6d7-d50021302ab1.jpg"
+        ],
+        "title": "Knight",
+        "description": "",
+        "dimensions": "",
+        "year": "",
+        "medium": ""
     },
     {
         "id": 2,
-        "src": "images/testingImages/testing2.jpg",
-        "title": "Abstract Form",
-        "description": "Abstract sculpture exploring form and negative space",
-        "dimensions": "30 x 40",
-        "year": "2023",
-        "medium": "Recycled materials"
+        "images": [
+            "images/testingImages/a56827bb-44f1-491d-8232-9b3425599a6c.JPEG"
+        ],
+        "title": "Woman",
+        "description": "",
+        "dimensions": "",
+        "year": "",
+        "medium": ""
     },
     {
         "id": 3,
-        "src": "images/testingImages/testing3.jpg",
-        "title": "Ocean Waves",
-        "description": "Flowing sculpture inspired by ocean movement",
-        "dimensions": "35 x 28",
-        "year": "2024",
-        "medium": "Wire and clay"
+        "images": [
+            "images/testingImages/FullSizeRender.JPEG"
+        ],
+        "title": "Gold Ship",
+        "description": "",
+        "dimensions": "",
+        "year": "",
+        "medium": ""
     },
     {
         "id": 4,
-        "src": "images/testingImages/testing4.jpg",
-        "title": "Ship",
-        "description": "Maritime-inspired sculpture with emphasis on negative space",
-        "dimensions": "38 x 48 x 26 cm",
-        "year": "2024",
-        "medium": "Mixed media"
+        "images": [
+            "images/testingImages/IMG_0424.JPEG",
+            "images/testingImages/IMG_0425.JPEG",
+            "images/testingImages/IMG_0427.JPEG",
+            "images/testingImages/IMG_0430.JPEG",
+            "images/testingImages/IMG_0433.JPEG",
+            "images/testingImages/IMG_0434.JPEG",
+            "images/testingImages/IMG_0442.JPEG"
+        ],
+        "title": "Silver Ship",
+        "description": "",
+        "dimensions": "",
+        "year": "",
+        "medium": ""
     },
     {
         "id": 5,
-        "src": "images/testingImages/testing5.jpg",
-        "title": "Dynasty",
-        "description": "Sculpture capturing movement and historical essence",
-        "dimensions": "30 x 40",
-        "year": "2023",
-        "medium": "Wire art"
+        "images": [
+            "images/testingImages/IMG_0478.JPEG",
+            "images/testingImages/IMG_0480.JPEG",
+            "images/testingImages/IMG_0481.JPEG"
+        ],
+        "title": "Silver Knight",
+        "description": "",
+        "dimensions": "",
+        "year": "",
+        "medium": ""
     },
     {
         "id": 6,
-        "src": "images/testingImages/testing6.jpg",
-        "title": "Golden Expression",
-        "description": "Contemporary piece exploring artistic expression",
-        "dimensions": "32 x 45",
-        "year": "2024",
-        "medium": "Clay and recycled materials"
+        "images": [
+            "images/testingImages/IMG_0484.JPEG",
+            "images/testingImages/IMG_0488.JPEG"
+        ],
+        "title": "Bronze Violinist",
+        "description": "",
+        "dimensions": "",
+        "year": "",
+        "medium": ""
+    },
+    {
+        "id": 7,
+        "images": [
+            "images/testingImages/IMG_0500.JPEG",
+            "images/testingImages/IMG_0506.JPEG",
+            "images/testingImages/IMG_0515.JPEG",
+            "images/testingImages/IMG_0516.JPEG",
+            "images/testingImages/IMG_0590.JPEG"
+        ],
+        "title": "Silver Knight (2)",
+        "description": "",
+        "dimensions": "",
+        "year": "",
+        "medium": ""
+    },
+    {
+        "id": 8,
+        "images": [
+            "images/testingImages/IMG_0638.JPEG"
+        ],
+        "title": "Gold Soldier",
+        "description": "",
+        "dimensions": "",
+        "year": "",
+        "medium": ""
+    },
+    {
+        "id": 9,
+        "images": [
+            "images/testingImages/IMG_0644.JPEG"
+        ],
+        "title": "Pianist",
+        "description": "",
+        "dimensions": "",
+        "year": "",
+        "medium": ""
+    },
+    {
+        "id": 10,
+        "images": [
+            "images/testingImages/IMG_0657.JPEG",
+            "images/testingImages/IMG_0660.JPEG"
+        ],
+        "title": "Bronze Horseman",
+        "description": "",
+        "dimensions": "",
+        "year": "",
+        "medium": ""
+    },
+    {
+        "id": 11,
+        "images": [
+            "images/testingImages/IMG_0691.JPEG",
+            "images/testingImages/IMG_0692.JPEG",
+            "images/testingImages/IMG_0695.JPEG",
+            "images/testingImages/IMG_0696.JPEG"
+        ],
+        "title": "Bronze Soldier",
+        "description": "",
+        "dimensions": "",
+        "year": "",
+        "medium": ""
+    },
+    {
+        "id": 12,
+        "images": [
+            "images/testingImages/IMG_0776.JPEG"
+        ],
+        "title": "Bronze Horseman (2)",
+        "description": "",
+        "dimensions": "",
+        "year": "",
+        "medium": ""
+    },
+    {
+        "id": 13,
+        "images": [
+            "images/testingImages/IMG_0874.JPEG"
+        ],
+        "title": "Silver Ship (2)",
+        "description": "",
+        "dimensions": "",
+        "year": "",
+        "medium": ""
+    },
+    {
+        "id": 14,
+        "images": [
+            "images/testingImages/IMG_1054.JPEG",
+            "images/testingImages/IMG_1057.JPEG"
+        ],
+        "title": "Birdman",
+        "description": "",
+        "dimensions": "",
+        "year": "",
+        "medium": ""
+    },
+    {
+        "id": 15,
+        "images": [
+            "images/testingImages/IMG_1233.JPEG"
+        ],
+        "title": "Silver Ship (3)",
+        "description": "",
+        "dimensions": "",
+        "year": "",
+        "medium": ""
+    },
+    {
+        "id": 16,
+        "images": [
+            "images/testingImages/IMG_1281.JPEG",
+            "images/testingImages/IMG_1285.JPEG",
+            "images/testingImages/IMG_1288.JPEG",
+            "images/testingImages/IMG_1296.JPEG",
+            "images/testingImages/IMG_1302.JPEG",
+            "images/testingImages/IMG_1303.JPEG",
+            "images/testingImages/IMG_1305.JPEG"
+        ],
+        "title": "Ballerina",
+        "description": "",
+        "dimensions": "",
+        "year": "",
+        "medium": ""
+    },
+    {
+        "id": 17,
+        "images": [
+            "images/testingImages/IMG_1318.JPEG"
+        ],
+        "title": "Silver Horseman",
+        "description": "",
+        "dimensions": "",
+        "year": "",
+        "medium": ""
+    },
+    {
+        "id": 18,
+        "images": [
+            "images/testingImages/IMG_1407.JPEG",
+            "images/testingImages/IMG_1408.JPEG",
+            "images/testingImages/IMG_1409.JPEG",
+            "images/testingImages/IMG_1411.JPEG",
+            "images/testingImages/IMG_1413.JPEG",
+            "images/testingImages/IMG_1414.JPEG"
+        ],
+        "title": "Dog",
+        "description": "",
+        "dimensions": "",
+        "year": "",
+        "medium": ""
+    },
+    {
+        "id": 19,
+        "images": [
+            "images/testingImages/IMG_1420.JPEG",
+            "images/testingImages/IMG_1422.JPEG",
+            "images/testingImages/IMG_1423.JPEG"
+        ],
+        "title": "Mermaid",
+        "description": "",
+        "dimensions": "",
+        "year": "",
+        "medium": ""
+    },
+    {
+        "id": 20,
+        "images": [
+            "images/testingImages/IMG_1428.JPEG",
+            "images/testingImages/IMG_1431.JPEG",
+            "images/testingImages/IMG_1434.JPEG",
+            "images/testingImages/IMG_1436.JPEG"
+        ],
+        "title": "Silver Violinist",
+        "description": "",
+        "dimensions": "",
+        "year": "",
+        "medium": ""
+    },
+    {
+        "id": 21,
+        "images": [
+            "images/testingImages/IMG_1437.JPEG",
+            "images/testingImages/IMG_1438.JPEG",
+            "images/testingImages/IMG_1439.JPEG",
+            "images/testingImages/IMG_1440.JPEG"
+        ],
+        "title": "Person",
+        "description": "",
+        "dimensions": "",
+        "year": "",
+        "medium": ""
+    },
+    {
+        "id": 22,
+        "images": [
+            "images/testingImages/IMG_1441.JPEG",
+            "images/testingImages/IMG_1442.JPEG",
+            "images/testingImages/IMG_1443.JPEG",
+            "images/testingImages/IMG_1444.JPEG",
+            "images/testingImages/IMG_1445.JPEG"
+        ],
+        "title": "Cowboy",
+        "description": "",
+        "dimensions": "",
+        "year": "",
+        "medium": ""
+    },
+    {
+        "id": 23,
+        "images": [
+            "images/testingImages/IMG_1446.JPEG",
+            "images/testingImages/IMG_1448.JPEG",
+            "images/testingImages/IMG_1449.JPEG",
+            "images/testingImages/IMG_1452.JPEG",
+            "images/testingImages/IMG_1454.JPEG",
+            "images/testingImages/IMG_1456.JPEG"
+        ],
+        "title": "King",
+        "description": "",
+        "dimensions": "",
+        "year": "",
+        "medium": ""
+    },
+    {
+        "id": 24,
+        "images": [
+            "images/testingImages/IMG_1519.JPEG",
+            "images/testingImages/IMG_1521.JPEG",
+            "images/testingImages/IMG_1522.JPEG",
+            "images/testingImages/IMG_1523.JPEG",
+            "images/testingImages/IMG_1525.JPEG",
+            "images/testingImages/IMG_1526.JPEG",
+            "images/testingImages/IMG_1527.JPEG",
+            "images/testingImages/IMG_1529.JPEG",
+            "images/testingImages/IMG_1536.JPEG",
+            "images/testingImages/IMG_1540.JPEG",
+            "images/testingImages/IMG_1541.JPEG",
+            "images/testingImages/IMG_1542.JPEG",
+            "images/testingImages/IMG_1544.JPEG",
+            "images/testingImages/IMG_1547.JPEG",
+            "images/testingImages/IMG_1549.JPEG"
+        ],
+        "title": "Plane",
+        "description": "",
+        "dimensions": "",
+        "year": "",
+        "medium": ""
+    },
+    {
+        "id": 25,
+        "images": [
+            "images/testingImages/IMG_1564.JPEG"
+        ],
+        "title": "Jester",
+        "description": "",
+        "dimensions": "",
+        "year": "",
+        "medium": ""
+    },
+    {
+        "id": 26,
+        "images": [
+            "images/testingImages/IMG_1685.JPEG",
+            "images/testingImages/IMG_1690.JPEG",
+            "images/testingImages/IMG_1692.JPEG",
+            "images/testingImages/IMG_1693.JPEG",
+            "images/testingImages/IMG_1695.JPEG",
+            "images/testingImages/IMG_1698.JPEG",
+            "images/testingImages/IMG_1702.JPEG",
+            "images/testingImages/IMG_1705.JPEG",
+            "images/testingImages/IMG_1706.JPEG"
+        ],
+        "title": "Farmer",
+        "description": "",
+        "dimensions": "",
+        "year": "",
+        "medium": ""
+    },
+    {
+        "id": 27,
+        "images": [
+            "images/testingImages/IMG_1709.JPEG",
+            "images/testingImages/IMG_1710.JPEG",
+            "images/testingImages/IMG_1711.JPEG",
+            "images/testingImages/IMG_1722.JPEG",
+            "images/testingImages/IMG_1725.JPEG",
+            "images/testingImages/IMG_1726.JPEG",
+            "images/testingImages/IMG_1733.JPEG"
+        ],
+        "title": "Silver Ship (4)",
+        "description": "",
+        "dimensions": "",
+        "year": "",
+        "medium": ""
+    },
+    {
+        "id": 28,
+        "images": [
+            "images/testingImages/IMG_4045.JPEG",
+            "images/testingImages/IMG_4046.JPEG",
+            "images/testingImages/IMG_4047.JPEG",
+            "images/testingImages/IMG_4048.JPEG",
+            "images/testingImages/IMG_4051.JPEG",
+            "images/testingImages/IMG_4053.JPEG",
+            "images/testingImages/IMG_4054.JPEG",
+            "images/testingImages/IMG_4056.JPEG"
+        ],
+        "title": "Car",
+        "description": "",
+        "dimensions": "",
+        "year": "",
+        "medium": ""
+    },
+    {
+        "id": 29,
+        "images": [
+            "images/testingImages/IMG_4453.JPEG"
+        ],
+        "title": "Wheel Man",
+        "description": "",
+        "dimensions": "",
+        "year": "",
+        "medium": ""
+    },
+    {
+        "id": 30,
+        "images": [
+            "images/testingImages/IMG_4470.JPEG",
+            "images/testingImages/IMG_4474.JPEG"
+        ],
+        "title": "Juggler",
+        "description": "",
+        "dimensions": "",
+        "year": "",
+        "medium": ""
+    },
+    {
+        "id": 31,
+        "images": [
+            "images/testingImages/IMG_7758.JPEG",
+            "images/testingImages/IMG_7761.JPEG"
+        ],
+        "title": "Bronze Car",
+        "description": "",
+        "dimensions": "",
+        "year": "",
+        "medium": ""
+    },
+    {
+        "id": 32,
+        "images": [
+            "images/testingImages/IMG_7773.JPEG"
+        ],
+        "title": "Wolf Knight",
+        "description": "",
+        "dimensions": "",
+        "year": "",
+        "medium": ""
+    },
+    {
+        "id": 33,
+        "images": [
+            "images/testingImages/IMG_7860.JPEG",
+            "images/testingImages/IMG_7861.JPEG",
+            "images/testingImages/IMG_7863.JPEG",
+            "images/testingImages/IMG_7864.JPEG"
+        ],
+        "title": "Film Crew",
+        "description": "",
+        "dimensions": "",
+        "year": "",
+        "medium": ""
+    },
+    {
+        "id": 34,
+        "images": [
+            "images/testingImages/IMG_8027.JPEG",
+            "images/testingImages/IMG_8033.JPEG",
+            "images/testingImages/IMG_8034.JPEG",
+            "images/testingImages/IMG_8043.JPEG"
+        ],
+        "title": "Silver Knight (3)",
+        "description": "",
+        "dimensions": "",
+        "year": "",
+        "medium": ""
     }
 ]

@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/DavidsWebsite/static/css/main.e1ff5725.css",
-    "main.js": "/DavidsWebsite/static/js/main.305203a7.js",
+    "main.css": "/DavidsWebsite/static/css/main.6cbb7aff.css",
+    "main.js": "/DavidsWebsite/static/js/main.e67ac4a3.js",
     "static/media/fa-solid-900.ttf": "/DavidsWebsite/static/media/fa-solid-900.07ed6d5fa32c1d54af0f.ttf",
     "static/media/fa-brands-400.ttf": "/DavidsWebsite/static/media/fa-brands-400.0ff70dcbf135d859ebf3.ttf",
     "static/media/fa-solid-900.woff2": "/DavidsWebsite/static/media/fa-solid-900.93f719f4d62bfa3e748c.woff2",
@@ -12,11 +12,11 @@
     "static/media/fa-v4compatibility.ttf": "/DavidsWebsite/static/media/fa-v4compatibility.0f6cb412603527bda691.ttf",
     "static/media/fa-v4compatibility.woff2": "/DavidsWebsite/static/media/fa-v4compatibility.6cfec8414be20e2c3426.woff2",
     "index.html": "/DavidsWebsite/index.html",
-    "main.e1ff5725.css.map": "/DavidsWebsite/static/css/main.e1ff5725.css.map",
-    "main.305203a7.js.map": "/DavidsWebsite/static/js/main.305203a7.js.map"
+    "main.6cbb7aff.css.map": "/DavidsWebsite/static/css/main.6cbb7aff.css.map",
+    "main.e67ac4a3.js.map": "/DavidsWebsite/static/js/main.e67ac4a3.js.map"
   },
   "entrypoints": [
-    "static/css/main.e1ff5725.css",
-    "static/js/main.305203a7.js"
+    "static/css/main.6cbb7aff.css",
+    "static/js/main.e67ac4a3.js"
   ]
 }

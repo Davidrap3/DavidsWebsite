@@ -1,40 +1,66 @@
 [
     {
         "id": 1,
-        "artName": "Samurai",
-        "artImage": "images/testingImages/testing1.jpg",
-        "description": "Text",
+        "artName": "Knight",
+        "artImages": ["images/testingImages/8fe6465e-8893-4f82-b9ad-c69665713ce1.jpg"],
+        "description": "",
         "details": [
             {
-                "dimensions": "24 x 36",
-                "concept": "Fairytale come to life",
-                "year": " 2023"
+                "dimensions": "",
+                "concept": "",
+                "year": ""
             }
         ]
     },
     {
         "id": 2,
-        "artName": "Ship",
-        "artImage": "images/testingImages/testing4.jpg",
-        "description": "Text",
+        "artName": "Silver Ship",
+        "artImages": ["images/testingImages/IMG_0424.JPEG"],
+        "description": "",
         "details": [
             {
-                "dimensions": "38 x 48​ x 26 cm",
-                "concept": "Negative Space",
-                "year": " 2024"
+                "dimensions": "",
+                "concept": "",
+                "year": ""
             }
         ]
     },
     {
         "id": 3,
-        "artName": "d​ynasty",
-        "artImage": "images/testingImages/testing5.jpg",
-        "description": "Text",
+        "artName": "Ballerina",
+        "artImages": ["images/testingImages/IMG_1281.JPEG"],
+        "description": "",
         "details": [
             {
-                "dimensions": "30 x 40",
-                "concept": "Movement",
-                "year": " 2023"
+                "dimensions": "",
+                "concept": "",
+                "year": ""
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "artName": "Plane",
+        "artImages": ["images/testingImages/IMG_1519.JPEG"],
+        "description": "",
+        "details": [
+            {
+                "dimensions": "",
+                "concept": "",
+                "year": ""
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "artName": "Juggler",
+        "artImages": ["images/testingImages/IMG_4470.JPEG"],
+        "description": "",
+        "details": [
+            {
+                "dimensions": "",
+                "concept": "",
+                "year": ""
             }
         ]
     }
