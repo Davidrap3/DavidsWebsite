@@ -14,10 +14,10 @@ const Carousel = () => {
         fetch(`${process.env.PUBLIC_URL}/data/carousel.json`)
             .then(response => response.json())
             .then(data => {
-                // Prepend PUBLIC_URL to image paths
+                // Prepend PUBLIC_URL to image paths in the artImages array
                 const itemsWithUrl = data.map(item => ({
                     ...item,
-                    artImage: `${process.env.PUBLIC_URL}/${item.artImage}`
+                    artImages: item.artImages.map(img => `${process.env.PUBLIC_URL}/${img}`)
                 }));
                 setTempInfo(itemsWithUrl);
             })
@@ -68,8 +68,9 @@ const Carousel = () => {
         if (pause || tempInfo.length === 0) return;
 
         const interval = setInterval(() => {
-            nextSlide();
-        }, 10000);
+            setDirection('right');
+            setCurrentIndex((prevIndex) => (prevIndex + 1) % tempInfo.length);
+        }, 5000);
 
         return () => clearInterval(interval);
     }, [pause, tempInfo.length])
@@ -78,10 +79,6 @@ const Carousel = () => {
     return(
         <section
             className={styles.CarouselContainer}
-            onMouseEnter={() => setPause(true)}
-            onMouseLeave={() => setPause(false)}
-            onTouchStart={handleTouchStart}
-            onTouchMove={handleTouchMove}
             aria-roledescription="carousel"
             aria-label="Featured artworks"
         >
@@ -98,11 +95,17 @@ const Carousel = () => {
                     {siteContent.artistInfo.description}
                 </p>
             </div>
-            <div className={styles.CarouselImagesContainer}>
+            <div
+                className={styles.CarouselImagesContainer}
+                onMouseEnter={() => setPause(true)}
+                onMouseLeave={() => setPause(false)}
+                onTouchStart={handleTouchStart}
+                onTouchMove={handleTouchMove}
+            >
                 { tempInfo && tempInfo.map((item, index) => (
                     <div key={item.id} className={ currentIndex === index ? `${styles.CarouselItem} ${direction === 'right' ? styles.SlideInRight : styles.SlideInLeft}`: styles.SlideHidden}>
                         <img
-                            src={item.artImage}
+                            src={item.artImages[0]}
                             alt={item.artName}
                             className={styles.ArtImage}
                             draggable="false"
@@ -130,32 +133,32 @@ const Carousel = () => {
                         </div>
                     </div>
                 ))}
+                <div className={styles.Indicators} role="group" aria-label="Carousel navigation">
+                    { tempInfo.map((item, index) => (
+                        <button
+                            key={index}
+                            onClick={() => setCurrentIndex(index)}
+                            className={index === currentIndex ? `${styles.indicator}` : `${styles.indicator} ${styles.indicatorInactive}`}
+                            aria-label={`Go to slide ${index + 1}: ${item.artName}`}
+                            aria-current={index === currentIndex ? 'true' : 'false'}
+                        ></button>
+                    ))}
+                </div>
+                <button
+                    onClick={prevSlide}
+                    className={`${styles.CarouselArrows} ${styles.CarouselLeft}`}
+                    aria-label="Previous slide"
+                >
+                    <i className={`${styles.CarouselIconLeft} fa-solid fa-angle-left`} aria-hidden="true"></i>
+                </button>
+                <button
+                    onClick={nextSlide}
+                    className={`${styles.CarouselArrows} ${styles.CarouselRight}`}
+                    aria-label="Next slide"
+                >
+                    <i className={`${styles.CarouselIconLeft} fa-solid fa-angle-right`} aria-hidden="true"></i>
+                </button>
             </div>
-            <div className={styles.Indicators} role="group" aria-label="Carousel navigation">
-                { tempInfo.map((item, index) => (
-                    <button
-                        key={index}
-                        onClick={() => setCurrentIndex(index)}
-                        className={index === currentIndex ? `${styles.indicator}` : `${styles.indicator} ${styles.indicatorInactive}`}
-                        aria-label={`Go to slide ${index + 1}: ${item.artName}`}
-                        aria-current={index === currentIndex ? 'true' : 'false'}
-                    ></button>
-                ))}
-            </div>
-            <button
-                onClick={prevSlide}
-                className={`${styles.CarouselArrows} ${styles.CarouselLeft}`}
-                aria-label="Previous slide"
-            >
-                <i className={`${styles.CarouselIconLeft} fa-solid fa-angle-left`} aria-hidden="true"></i>
-            </button>
-            <button
-                onClick={nextSlide}
-                className={`${styles.CarouselArrows} ${styles.CarouselRight}`}
-                aria-label="Next slide"
-            >
-                <i className={`${styles.CarouselIconLeft} fa-solid fa-angle-right`} aria-hidden="true"></i>
-            </button>
         </section>
     )
 

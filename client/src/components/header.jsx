@@ -1,16 +1,16 @@
 import styles from './header.module.scss';
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 
 const Header = () => {
     return (
         <header className={styles.HeaderContainer}>
             <div className={styles.HeaderContainerInner}>
-                <div className={styles.HeaderLeft}>
+                <Link to="/" className={styles.HeaderLeft}>
                     <img className= {styles.HeaderLogo} src={`${process.env.PUBLIC_URL}/images/templogo.svg`} alt="The Golden Sail Logo"></img>
-                </div>
-                <div className={styles.HeaderCenter}>
+                </Link>
+                <Link to="/" className={styles.HeaderCenter}>
                     <h1 className={styles.HeaderTitle}>The Golden Sail</h1>
-                </div>
+                </Link>
                 <nav className={styles.HeaderRight}>
                     <div className={styles.HeaderLinksContainer}>
                         <ul className={styles.HeaderLinksInner}>

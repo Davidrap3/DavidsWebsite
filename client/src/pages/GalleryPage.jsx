@@ -4,6 +4,7 @@ import Footer from '../components/footer';
 
 const GalleryPage = () => {
     const [selectedImage, setSelectedImage] = useState(null);
+    const [selectedImageIndex, setSelectedImageIndex] = useState(0);
     const [galleryImages, setGalleryImages] = useState([]);
     const [siteContent, setSiteContent] = useState({ gallery: { title: "Gallery", subtitle: "" } });
 
@@ -12,10 +13,10 @@ const GalleryPage = () => {
         fetch(`${process.env.PUBLIC_URL}/data/gallery.json`)
             .then(response => response.json())
             .then(data => {
-                // Prepend PUBLIC_URL to image paths
-                const imagesWithUrl = data.map(img => ({
-                    ...img,
-                    src: `${process.env.PUBLIC_URL}/${img.src}`
+                // Prepend PUBLIC_URL to image paths in the images array
+                const imagesWithUrl = data.map(item => ({
+                    ...item,
+                    images: item.images.map(img => `${process.env.PUBLIC_URL}/${img}`)
                 }));
                 setGalleryImages(imagesWithUrl);
             })
@@ -30,10 +31,12 @@ const GalleryPage = () => {
 
     const openModal = (image) => {
         setSelectedImage(image);
+        setSelectedImageIndex(0);
     };
 
     const closeModal = () => {
         setSelectedImage(null);
+        setSelectedImageIndex(0);
     };
 
     const nextImage = () => {
@@ -41,6 +44,7 @@ const GalleryPage = () => {
             const currentIndex = galleryImages.findIndex(img => img.id === selectedImage.id);
             const nextIndex = (currentIndex + 1) % galleryImages.length;
             setSelectedImage(galleryImages[nextIndex]);
+            setSelectedImageIndex(0);
         }
     };
 
@@ -49,7 +53,12 @@ const GalleryPage = () => {
             const currentIndex = galleryImages.findIndex(img => img.id === selectedImage.id);
             const prevIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
             setSelectedImage(galleryImages[prevIndex]);
+            setSelectedImageIndex(0);
         }
+    };
+
+    const selectThumbnail = (index) => {
+        setSelectedImageIndex(index);
     };
 
     const handleModalClick = (e) => {
@@ -99,7 +108,7 @@ const GalleryPage = () => {
                         aria-label={`View ${image.title}, created in ${image.year}`}
                     >
                         <img
-                            src={image.src}
+                            src={image.images[0]}
                             alt={image.title}
                             className={styles.GalleryImage}
                             draggable="false"
@@ -131,13 +140,31 @@ const GalleryPage = () => {
                         </button>
                         <div className={styles.ModalImageContainer}>
                             <img
-                                src={selectedImage.src}
-                                alt={selectedImage.title}
+                                src={selectedImage.images[selectedImageIndex]}
+                                alt={`${selectedImage.title} - Image ${selectedImageIndex + 1}`}
                                 className={styles.ModalImage}
                                 draggable="false"
                                 loading="lazy"
                             />
                         </div>
+                        {selectedImage.images.length > 1 && (
+                            <div className={styles.ThumbnailContainer}>
+                                {selectedImage.images.map((img, index) => (
+                                    <button
+                                        key={index}
+                                        className={`${styles.Thumbnail} ${index === selectedImageIndex ? styles.ThumbnailActive : ''}`}
+                                        onClick={() => selectThumbnail(index)}
+                                        aria-label={`View image ${index + 1} of ${selectedImage.images.length}`}
+                                    >
+                                        <img
+                                            src={img}
+                                            alt={`${selectedImage.title} thumbnail ${index + 1}`}
+                                            draggable="false"
+                                        />
+                                    </button>
+                                ))}
+                            </div>
+                        )}
                         <div className={styles.ModalInfo}>
                             <h2 id="modal-title" className={styles.ModalTitle}>{selectedImage.title}</h2>
                             <p className={styles.ModalDescription}>{selectedImage.description}</p>

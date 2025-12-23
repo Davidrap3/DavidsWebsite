@@ -8,34 +8,6 @@
     height: 600px;
     //background-color: rgb(241, 250, 247);
 
-    .Indicators {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: absolute;
-        top: 15px;
-        right: 15px;
-
-        .indicator {
-            border: none;
-            height: .9rem;
-            box-shadow: 0 0 5px #555;
-            border-radius: 100%;
-            background-color: #A06268;
-            margin: 0 .35rem;
-            outline: none;
-            width: .9rem;
-            cursor: pointer;
-        }
-
-        .indicatorInactive {
-            background-color: #f1f1f1;
-            height: .5rem;
-            width: .5rem;
-        }
-
-    }
-
     .CarouselAuthor {
         display: flex; /* Fallback for non-WebKit browsers */
         flex-direction: column;
@@ -109,6 +81,7 @@
         overflow: hidden;
         height: 100%;
         width: 50%;
+        position: relative;
 
         .CarouselItem {
             display: flex;
@@ -150,34 +123,61 @@
                 }
             }
         }
-    }
 
-    .CarouselArrows {
-        position: absolute;
-        display: flex;
-        top: 45%;
-        height: 5rem;
-        width: 30px;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        transition: all 0.3s ease-in-out;
-    }
+        .Indicators {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            top: 15px;
+            right: 15px;
 
-    .CarouselLeft {
-        border-top-right-radius: 10px;
-        border-bottom-right-radius: 10px;
-        left: -30px;
-    }
+            .indicator {
+                border: none;
+                height: .9rem;
+                box-shadow: 0 0 5px #555;
+                border-radius: 100%;
+                background-color: #A06268;
+                margin: 0 .35rem;
+                outline: none;
+                width: .9rem;
+                cursor: pointer;
+            }
 
-    .CarouselRight {
-        border-top-left-radius: 10px;
-        border-bottom-left-radius: 10px;
-        right: -30px;
-    }
+            .indicatorInactive {
+                background-color: #f1f1f1;
+                height: .5rem;
+                width: .5rem;
+            }
+        }
 
-    .CarouselIconLeft {
-        font-size: 20px;
+        .CarouselArrows {
+            position: absolute;
+            display: flex;
+            top: 45%;
+            height: 5rem;
+            width: 30px;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .CarouselLeft {
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+            left: -30px;
+        }
+
+        .CarouselRight {
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+            right: -30px;
+        }
+
+        .CarouselIconLeft {
+            font-size: 20px;
+        }
     }
 
     .SlideHidden {
@@ -185,11 +185,11 @@
     }
 }
 
-.CarouselContainer:hover .CarouselLeft {
+.CarouselImagesContainer:hover .CarouselLeft {
     left: 0px
 }
 
-.CarouselContainer:hover .CarouselRight {
+.CarouselImagesContainer:hover .CarouselRight {
     right: 0px
 }
 

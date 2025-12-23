@@ -166,6 +166,48 @@
     object-fit: contain; // Changed from cover - shows FULL artwork without cropping
 }
 
+.ThumbnailContainer {
+    display: flex;
+    gap: 10px;
+    padding: 15px 20px;
+    justify-content: center;
+    background: #f8f9fa;
+    border-top: 1px solid #e9ecef;
+    overflow-x: auto;
+}
+
+.Thumbnail {
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    border: 2px solid transparent;
+    padding: 0;
+    background: none;
+    transition: border-color 0.2s ease, transform 0.2s ease;
+    flex-shrink: 0;
+}
+
+.Thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.Thumbnail:hover {
+    border-color: #6c757d;
+    transform: scale(1.05);
+}
+
+.ThumbnailActive {
+    border-color: #2c3e50;
+}
+
+.ThumbnailActive:hover {
+    border-color: #2c3e50;
+}
+
 .ModalInfo {
     padding: 30px;
 }
@@ -272,6 +314,16 @@
         flex-direction: column;
         align-items: flex-start;
         gap: 4px;
+    }
+
+    .ThumbnailContainer {
+        padding: 10px 15px;
+        gap: 8px;
+    }
+
+    .Thumbnail {
+        width: 50px;
+        height: 50px;
     }
 }
 
